@@ -48,16 +48,17 @@ while (True):
 2 нечетные (3 и 5).
 """
 print("\n2. Посчитать четные и нечетные цифры введенного натурального числа.\n")
-
 def RecOdd (a, count = 0):
     if (a % 2 == 1):
         count += 1
+    else:
+        count += 1000
     if (a < 10):
         return count
     return RecOdd(a // 10, count)
 
 inp = int(input("Enter a num to test odd function: "))
-print(f'In num {inp} there is {RecOdd(inp)} odd number(s)')
+print(f'In num {inp} there is {RecOdd(inp) % 1000} odd number(s) and {RecOdd(inp) // 1000} even numbers')
 
 """
 3. Сформировать из введенного числа обратное по порядку входящих 
